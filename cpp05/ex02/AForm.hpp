@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 03:51:47 by amessah           #+#    #+#             */
-/*   Updated: 2023/07/28 04:05:12 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/01 23:21:12 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class AForm
         int getGradeToExec();
         bool getSignde();
         void beSigned(Bureaucrat &bur);
-        virtual void execute(Bureaucrat const &bur) const = 0;
+        virtual void execute(Bureaucrat const &executor) const = 0;
         class GradeTooHighException : public std::exception {
             public:
                 virtual const char * what() const throw();

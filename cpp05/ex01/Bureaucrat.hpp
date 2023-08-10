@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 23:08:40 by amessah           #+#    #+#             */
-/*   Updated: 2023/07/26 04:21:26 by amessah          ###   ########.fr       */
+/*   Updated: 2023/07/28 02:54:26 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdexcept>
 #include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
     private:

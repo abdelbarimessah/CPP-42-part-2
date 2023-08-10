@@ -6,7 +6,7 @@
 #    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 23:21:44 by amessah           #+#    #+#              #
-#    Updated: 2023/07/26 00:41:11 by amessah          ###   ########.fr        #
+#    Updated: 2023/08/01 04:21:21 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ VERSION = -std=c++98  -Wall -Wextra -Werror
 SRC =	main.cpp	\
 		Bureaucrat.cpp \
 
-OBJECTS = $(SRC:.cpp=.opp)
+OBJECTS = $(SRC:.cpp=.o)
 
 all: $(NAME)
 

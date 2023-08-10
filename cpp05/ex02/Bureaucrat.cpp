@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 04:10:57 by amessah           #+#    #+#             */
-/*   Updated: 2023/07/28 04:17:08 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/01 23:57:42 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,14 +99,14 @@ void Bureaucrat::signForm(AForm &form)
         std::cout << name << " couldn’t sign " << form.getName() << " because his grade is too low" << std::endl;
 }
 
-void    Bureaucrat::ExecuteForm(AForm const &Af) const
+void    Bureaucrat::ExecuteForm(AForm const &form) const
 {
-	if (Af.getSignde() == false)
-		std::cout << name << " couldn't execute " <<  Af.getName() 
+	if (form.getSignde() == false)
+		std::cout << name << " couldn't execute " <<  form.getName() 
 					<< " because the form is not signed" << std::endl;
-	else if (Af.getGradeToExec() < grade)
-		std::cout << name << " couldn't execute " <<  Af.getName() 
+	else if (form.getGradeToExec() < grade)
+		std::cout << name << " couldn't execute " <<  form.getName() 
 					<< " because his grade is too low" << std::endl;
 	else
-		std::cout << name << " executes " <<  Af.getName() << std::endl;
+		std::cout << name << " executes " <<  form.getName() << std::endl;
 }

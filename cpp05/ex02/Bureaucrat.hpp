@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 04:09:17 by amessah           #+#    #+#             */
-/*   Updated: 2023/07/28 04:13:50 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/01 23:57:48 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ class Bureaucrat
                 virtual const char * what() const throw();
         };
         class GradeTooLowException : public std::exception {
-            public:
+            public: 
                 virtual const char * what() const throw();
         };
         void signForm(AForm &form);
-        void ExecuteForm(AForm const &Af) const;
+        void ExecuteForm(AForm const &form) const;
         ~Bureaucrat();
 };
 
