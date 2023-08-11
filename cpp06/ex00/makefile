@@ -1,15 +1,14 @@
-NAME = bureaucrat
+NAME = ScalarConverter
 
 CC = c++
 
-Header =  Bureaucrat.hpp Form.hpp
+Header =  ScalarConverter.hpp
 
 VERSION = -std=c++98  -Wall -Wextra -Werror
 
 
 SRC =	main.cpp	\
-		Bureaucrat.cpp \
-		Form.cpp	\
+		ScalarConverter.cpp \
 
 OBJECTS = $(SRC:.cpp=.opp)
 
