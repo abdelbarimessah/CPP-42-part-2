@@ -3,6 +3,19 @@
 
 #include <iostream>
 
+enum ValueType {
+    INT,
+    DOUBLE,
+    FLOAT,
+    CHAR,
+    UNKNOWN
+};
+
+typedef struct s_NumInfo {
+    bool dot ;
+    bool f ;
+}t_NumInfo;
+
 class ScalarConverter
 {
     private:
@@ -10,8 +23,11 @@ class ScalarConverter
     public:
         ScalarConverter();
         ScalarConverter(std::string value);
-        ScalarConverter(const ScalarConverter &cs)
+        ScalarConverter(const ScalarConverter &cp);
+        ScalarConverter &operator=(const ScalarConverter &cp);
         ~ScalarConverter();
+        std::string getValue();
+        void convert(std::string value);
 };
 
 
