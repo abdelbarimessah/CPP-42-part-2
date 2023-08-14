@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 04:05:53 by amessah           #+#    #+#             */
-/*   Updated: 2023/07/28 04:07:31 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/14 02:10:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,22 @@ AForm &AForm::operator=(const AForm &cp)
 }
 
 
-std::string AForm::getName()
+std::string AForm::getName() const 
 {
     return name;
 }
 
-int AForm::getGradeToSign()
+int AForm::getGradeToSign() const 
 {
     return gradeToSign; 
 }
 
-int AForm::getGradeToExec()
+int AForm::getGradeToExec() const
 {
     return gradeToExec;
 }
 
-bool AForm::getSignde()
+bool AForm::getSignde() const 
 {
     return signde;
 }

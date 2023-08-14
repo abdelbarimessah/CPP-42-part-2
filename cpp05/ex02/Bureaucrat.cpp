@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 04:10:57 by amessah           #+#    #+#             */
-/*   Updated: 2023/08/01 23:57:42 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/14 02:20:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &cp)
     return *this;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const 
 {
     return name;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const 
 {
     return grade;
 }

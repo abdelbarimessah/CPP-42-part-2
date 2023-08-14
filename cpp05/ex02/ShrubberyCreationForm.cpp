@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 23:01:36 by amessah           #+#    #+#             */
-/*   Updated: 2023/08/10 03:27:54 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/14 02:49:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     else
     {
         std::ofstream os;
-        os.open(target + "_shrubbery");
+        os.open((target + "_shrubbery").c_str());
         if(os.is_open())
         {
             os << "   oxoxoo    ooxoo" <<  std::endl;

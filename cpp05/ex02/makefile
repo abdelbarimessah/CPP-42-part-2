@@ -1,15 +1,19 @@
-NAME = bureaucrat
+NAME = b3b
 
 CC = c++
 
-Header =  Bureaucrat.hpp Form.hpp
+Header = 	Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+
 
 VERSION = -std=c++98  -Wall -Wextra -Werror
 
 
-SRC =	main.cpp	\
+SRC =	AForm.cpp \
 		Bureaucrat.cpp \
-		Form.cpp	\
+		main.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
 
 OBJECTS = $(SRC:.cpp=.opp)
 

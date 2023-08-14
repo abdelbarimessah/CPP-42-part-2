@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 00:09:24 by amessah           #+#    #+#             */
-/*   Updated: 2023/08/10 03:37:41 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/14 02:27:32 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+#include <string>
 
+class Bureaucrat;
+class AForm;
 
 class RobotomyRequestForm : public AForm
 {
