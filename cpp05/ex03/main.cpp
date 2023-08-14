@@ -18,48 +18,42 @@
 
 int main()
 {
-    try
-    {
-        Bureaucrat a("bureaucrat_1", 3);
-        Bureaucrat c = a;
-        Intern someRandomIntern;
-        AForm* rrf;
-        rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
-        if (!rrf)
-            return 0 ;
-        rrf->beSigned(a);
-        a.signForm(*rrf);
-        rrf->execute(a);
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
-    try
-    {
-        Bureaucrat b("bureaucrat_2", 3);
-        Bureaucrat c = b;
-        ShrubberyCreationForm s1("target2");
-        s1.beSigned(b);
-        b.signForm(s1);
-        s1.execute(b);
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
-    try
-    {
-        Bureaucrat c("bureaucrat_3", 3);
-        Bureaucrat d("bureaucrat_4", 46);
-        RobotomyRequestForm r1("target3");
-        r1.beSigned(c);
-        c.signForm(r1);
-        r1.execute(c);
-        d.ExecuteForm(r1);
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
+   try {
+		Bureaucrat	_Bureaucrat("f1", 137);
+		AForm *F1 = new  ShrubberyCreationForm(_Bureaucrat.getName());
+        F1->beSigned(_Bureaucrat);
+		_Bureaucrat.ExecuteForm(*F1);
+		
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+   try {
+		Bureaucrat	_Bureaucrat("f2", 45);
+		AForm *F2 = new  RobotomyRequestForm(_Bureaucrat.getName()); 
+		F2->beSigned(_Bureaucrat);
+		_Bureaucrat.ExecuteForm(*F2);
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+   try {
+		Bureaucrat	_Bureaucrat("f3", 5);
+		AForm *F3 = new  PresidentialPardonForm(_Bureaucrat.getName());
+		F3->beSigned(_Bureaucrat);
+		_Bureaucrat.ExecuteForm(*F3);
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+   try {
+		Bureaucrat	_Bureaucrat("f4", 5);
+        Intern some;
+		AForm *F3 = some.makeForm("RobotomyRequestForm", "abdelabri");
+		F3->beSigned(_Bureaucrat);
+		_Bureaucrat.ExecuteForm(*F3);
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+
+
+
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 23:18:18 by amessah           #+#    #+#             */
-/*   Updated: 2023/07/28 02:55:38 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/14 20:41:31 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ int main(void)
 {
     try 
     {
-        Bureaucrat ismail("ismail", 1);
-        Form mittous ("mittous", 1, 20);
+        Bureaucrat messah("messah", 1);
+        Form abdelbari ("abdelbari", -2, 220);
         try
         {
-            mittous.beSigned(ismail);
+            abdelbari.beSigned(messah);
         }
         catch (std::exception &e)
         {
             std::cout << e.what() << std::endl;
         }
-        std::cout << mittous << std::endl;
-        std::cout << ismail << std::endl;
+        std::cout << abdelbari << std::endl;
+        std::cout << messah << std::endl;
     }	
     catch(std::exception &ex)
     {
