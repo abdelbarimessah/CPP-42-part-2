@@ -34,17 +34,20 @@ int checktype(std::string value)
     t_NumInfo num;
     num.dot = false;
     num.f = false;
+    
     if (!std::isdigit(value[0])) {
         if (value.size() == 1) {
             return CHAR;
         } else if (value[0] == '-' || value[0] == '+') {
             if (std::isdigit(value[1])) {
                 index = 1;
+            } else {
+                return UNKNOWN;
             }
         } else {
             return UNKNOWN;
         }
-    } else if (std::isdigit(value[index])) {
+    } else if (std::isdigit(value[index]) || (value[0] == '-' && std::isdigit(value[1]))) {
         for (size_t i = 0; i < value.length(); ++i) {
             char c = value[i];
             if (c == '.') {
@@ -57,7 +60,7 @@ int checktype(std::string value)
                     return UNKNOWN;
                 }
                 num.f = true;
-            } else if (!std::isdigit(c)) {
+            } else if (!std::isdigit(c) && c != '-') {
                 return UNKNOWN;
             }
         }
@@ -72,8 +75,8 @@ int checktype(std::string value)
     }
 
     return UNKNOWN;
-
 }
+
 
 std::string ScalarConverter::getValue()
 {
@@ -98,5 +101,7 @@ void ScalarConverter::convert(std::string value)
     {
         std::cout << "double" << std::endl;
     }
+    else
+        std::cout << "unkonow" << std::endl;
 
 }
