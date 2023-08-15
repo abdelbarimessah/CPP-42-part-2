@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 23:01:36 by amessah           #+#    #+#             */
-/*   Updated: 2023/08/15 01:55:49 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/15 04:14:16 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if(executor.getGrade() > getGradeToExec())
         throw AForm::GradeTooLowException();
-    else if(getSignde())
+    else if(!getSignde())
         throw AForm::FromNotSigned();
     else
     {

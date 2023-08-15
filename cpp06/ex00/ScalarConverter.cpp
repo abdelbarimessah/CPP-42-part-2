@@ -50,6 +50,7 @@ int checktype(std::string value)
     } else if (std::isdigit(value[index]) || (value[0] == '-' && std::isdigit(value[1]))) {
         for (size_t i = 0; i < value.length(); ++i) {
             char c = value[i];
+                std::cout << "fsdfs\n";
             if (c == '.') {
                 if (num.dot) {
                     return UNKNOWN;
@@ -103,5 +104,4 @@ void ScalarConverter::convert(std::string value)
     }
     else
         std::cout << "unkonow" << std::endl;
-
 }
