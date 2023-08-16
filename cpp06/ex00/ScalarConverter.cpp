@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/16 05:02:57 by amessah           #+#    #+#             */
+/*   Updated: 2023/08/17 00:08:07 by amessah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter()
@@ -17,7 +29,10 @@ ScalarConverter::ScalarConverter(const ScalarConverter &cp)
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &cp) 
 {
     if(this != &cp)
+    {
+        this->value = cp.value;
         *this = cp;
+    }
     return *this;
 }
 
@@ -177,5 +192,15 @@ void ScalarConverter::convert(std::string value)
         convetToDouble(value);
     }
     else if(checktype(value) == UNKNOWN)
-        std::cout << "type UNKONOW please enter a valid one !" << std::endl;
+    {
+        if(value == "nan" || value == "-inf" || value == "+inf")
+        {
+            std::cout << "char: impossible" <<std::endl;
+            std::cout << "int: impossible" <<std::endl;
+            std::cout << "float: " << value+"f" << std::endl;
+            std::cout << "double: " << value << std::endl;
+        }
+        else
+            std::cout << "type UNKONOW please enter a valid one !" << std::endl;
+    }
 }

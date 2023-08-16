@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/16 05:03:07 by amessah           #+#    #+#             */
+/*   Updated: 2023/08/17 00:10:49 by amessah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
@@ -14,9 +26,8 @@ struct  Data
 class Serializer
 {
     private:
-
-    public:
         Serializer();
+    public:
         Serializer(const Serializer &cp);
         Serializer &operator=(const Serializer &cp);
         static uintptr_t serialize(Data* ptr);
