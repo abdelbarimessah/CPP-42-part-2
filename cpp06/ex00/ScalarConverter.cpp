@@ -47,10 +47,10 @@ int checktype(std::string value)
         } else {
             return UNKNOWN;
         }
-    } else if (std::isdigit(value[index]) || (value[0] == '-' && std::isdigit(value[1]))) {
-        for (size_t i = 0; i < value.length(); ++i) {
+    } 
+    if (std::isdigit(value[index]) || (value[0] == '-' && std::isdigit(value[1]))) {
+        for (size_t i = 1; i < value.length(); ++i) {
             char c = value[i];
-                std::cout << "fsdfs\n";
             if (c == '.') {
                 if (num.dot) {
                     return UNKNOWN;
@@ -61,7 +61,7 @@ int checktype(std::string value)
                     return UNKNOWN;
                 }
                 num.f = true;
-            } else if (!std::isdigit(c) && c != '-') {
+            } else if (!std::isdigit(c) ){
                 return UNKNOWN;
             }
         }
@@ -84,24 +84,98 @@ std::string ScalarConverter::getValue()
     return value;
 }
 
+void convertToChar(std::string value)
+{
+    std::cout << "char: " << value[0] << std::endl;
+    std::cout << "int: " << static_cast<int>(value[0]) << std::endl;
+    std::cout << "float: " << static_cast<float>(value[0]) << ".0f" << std::endl;
+    std::cout << "double: " << static_cast<double>(value[0]) << ".0"<< std::endl;
+}
+
+
+void convertToInt(std::string value)
+{
+    int nbr;
+
+    std::istringstream iss(value);
+    iss >> nbr;
+    std::cout << "char: ";
+    if(nbr < 0 || nbr > 127)
+        std::cout << "impossible" << std::endl;
+    if(nbr < 32 || nbr == 127)
+        std::cout << "Non displayable" << std::endl;
+    else 
+        std::cout << static_cast<char>(nbr) << std::endl;
+    std::cout << "int: " << nbr << std::endl;
+    std::cout << "float: " << static_cast<float>(nbr) << ".0f"<< std::endl;
+    std::cout << "double: " << static_cast<double>(nbr) << ".0" << std::endl;
+    
+}
+
+void convetToFloat(std::string value)
+{
+    
+    float nbr;
+    value = value.erase(value.size() - 1, 1);
+    std::istringstream iss(value);
+    iss >> nbr;
+    std::cout << "char: ";
+    if(nbr < 0 || nbr > 127)
+        std::cout << "impossible" << std::endl;
+    if(nbr < 32 || nbr == 127)
+        std::cout << "Non displayable" << std::endl;
+    else 
+        std::cout << static_cast<char>(nbr) << std::endl;
+    
+    std::cout << "int: ";
+    if(static_cast<int>(nbr) < INT_MIN || static_cast<int>(nbr) > INT_MAX)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<int>(nbr) << std::endl;
+    std::cout << "float: " << nbr << "f"<< std::endl;
+    std::cout << "double: " << static_cast<double>(nbr) << std::endl;
+}
+void convetToDouble(std::string value)
+{
+    
+    double nbr;
+    std::istringstream iss(value);
+    iss >> nbr;
+    std::cout << "char: ";
+    if(nbr < 0 || nbr > 127)
+        std::cout << "impossible" << std::endl;
+    if(nbr < 32 || nbr == 127)
+        std::cout << "Non displayable" << std::endl;
+    else 
+        std::cout << static_cast<char>(nbr) << std::endl;
+    
+    std::cout << "int: ";
+    if(static_cast<int>(nbr) < INT_MIN || static_cast<int>(nbr) > INT_MAX)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<int>(nbr) << std::endl;
+    std::cout << "float: " << static_cast<float>(nbr) << "f"<< std::endl;
+    std::cout << "double: " << nbr << std::endl;
+}
+
 void ScalarConverter::convert(std::string value)
 {
     if(checktype(value) == CHAR)
     {
-        std::cout << "char" << std::endl;
+        convertToChar(value);
     }
     else if(checktype(value) == INT)
     {
-        std::cout << "int" << std::endl;
+        convertToInt(value);
     }
     else if(checktype(value) == FLOAT)
     {   
-        std::cout << "float" << std::endl;
+        convetToFloat(value);
     }
     else if(checktype(value) == DOUBLE)
     {
-        std::cout << "double" << std::endl;
+        convetToDouble(value);
     }
-    else
-        std::cout << "unkonow" << std::endl;
+    else if(checktype(value) == UNKNOWN)
+        std::cout << "type UNKONOW please enter a valid one !" << std::endl;
 }
