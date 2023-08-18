@@ -14,6 +14,12 @@ void iter(t arr[], int len, void (*f)(t arr))
 		f(arr[i]);
 }
 
+template <typename T>
+void print(T  x)
+{
+    std::cout << x << std::endl;
+}
+
 template <typename t>
 void function(t arr)
 {

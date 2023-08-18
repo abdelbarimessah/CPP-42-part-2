@@ -10,7 +10,11 @@ class Array
     public:
         Array()
         {
-            new 
+            new array[0]
+        }
+        Array(unsigned int n)
+        {
+            
         }
         ~Array();
 };
