@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 05:02:57 by amessah           #+#    #+#             */
-/*   Updated: 2023/08/17 00:08:07 by amessah          ###   ########.fr       */
+/*   Updated: 2023/08/18 00:22:18 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &cp)
     if(this != &cp)
     {
         this->value = cp.value;
-        *this = cp;
     }
     return *this;
 }
