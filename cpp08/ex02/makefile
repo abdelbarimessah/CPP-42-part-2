@@ -1,14 +1,12 @@
-NAME = Span
+NAME = Mutated
 
 CC = c++
 
-Header =  Span.hpp
+Header =  MutantStack.hpp
  
 VERSION = -std=c++98  -Wall -Wextra -Werror
 
-
 SRC =	main.cpp \
-		Span.cpp \
 
 OBJECTS = $(SRC:.cpp=.opp)
 

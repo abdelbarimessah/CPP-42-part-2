@@ -32,7 +32,7 @@ void    Span::addNumber(int nbr)
 {
     if(N == span.size())
     {
-        throw std::range_error("Error: full container !");
+        throw std::range_error("Error: Full container !");
         return ;
     }
     span.push_back(nbr);
@@ -43,7 +43,7 @@ int Span::shortestSpan()
 {
     if(span.size() <= 1)
     {
-        throw std::exception();
+        throw std::range_error("Error: Not enough numbers !");
         return (-1);
     }
     sort(span.begin(), span.end());
@@ -60,7 +60,7 @@ int Span::longestSpan()
 {
     if(span.size() <= 1)
     {
-        throw std::exception();
+        throw std::range_error("Error: Not enough numbers !");
         return (-1);
     }
     sort(span.begin(), span.end());
@@ -70,9 +70,9 @@ int Span::longestSpan()
 
 void Span::addMaxNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-    for (; begin != end; ++begin)
-            addNumber(*begin);
+    size_t range = std::distance(begin, end);
+    if(span.size() + range > N)
+        throw std::range_error("Error: Container size can't take this range of numbers !");
+    span.insert(span.begin(), begin, end);
 }
-
-
 
