@@ -70,9 +70,8 @@ int Span::longestSpan()
 
 void Span::addMaxNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-
-    
-    
+    for (; begin != end; ++begin)
+            addNumber(*begin);
 }
 
 
