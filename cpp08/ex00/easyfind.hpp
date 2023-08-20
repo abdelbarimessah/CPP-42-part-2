@@ -9,9 +9,14 @@
 template<typename T>
 int  easyfind(T &arr, int to_find)
 {
-    if (std::find(arr.begin(), arr.end(), to_find) != arr.end())
-        return 1;
-    return 0;
+    typename T::iterator i;
+    i = std::find(arr.begin(), arr.end(), to_find); 
+    if (i == arr.end())
+    {
+        std::cout << "No ocuurence found !" << std::endl;
+        return(-1);
+    }
+    return std::distance(arr.begin(), i);
 }
 
 
