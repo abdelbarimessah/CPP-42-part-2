@@ -1,13 +1,13 @@
-NAME = btc
+NAME = RPN
 
 CC = c++
 
-Header =  BitcoinExchange.hpp
+Header =  RPN.hpp
  
 VERSION = -std=c++98  -Wall -Wextra -Werror
 
 SRC =	main.cpp \
-		BitcoinExchange.cpp \
+		RPN.cpp \
 
 OBJECTS = $(SRC:.cpp=.opp)
 

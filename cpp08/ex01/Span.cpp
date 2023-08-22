@@ -13,12 +13,13 @@ Span::Span(unsigned int N) : N(N)
 
 Span::Span(const Span &cp)
 {
-    (void) cp;
+    *this = cp;
 }
 
 Span &Span::operator=(const Span &cp)
 {
-    (void)cp;
+    if(this != &cp)
+        this->N = cp.N;
     return *this;
 }
 
@@ -30,7 +31,7 @@ Span::~Span()
 
 void    Span::addNumber(int nbr)
 {
-    if(N == span.size())
+    if(span.size() == N)
     {
         throw std::range_error("Error: Full container !");
         return ;
