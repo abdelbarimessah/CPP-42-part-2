@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/22 22:54:48 by amessah           #+#    #+#             */
+/*   Updated: 2023/08/22 22:54:49 by amessah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
@@ -5,13 +17,13 @@
 #include <vector>
 #include <deque>
 #include <sys/time.h>
+#include <iomanip>
+#include <ctime>
 
 
 class PmergeMe
 {
     public:
-        double timeVector;
-        double timeDeque;
         std::vector<int> vect;
         std::deque<int> deq;
         PmergeMe();
@@ -20,53 +32,16 @@ class PmergeMe
         ~PmergeMe();
         void addToVector(int num);
         void addToDeque(int num);
-        void sortVector(std::vector<int> & vect);
-        void sortDeque(std::deque<int> & deq);
         void printVector(std::vector<int> & my_vec);
 };
 
-// void mergeSortVector(std::vector<int> & my_vec, int start, int end);
-// void mergeSortDeque(std::deque<int> & my_deq, int start, int end);
+void insertionSortD(std::deque<int> &arr, int start, int end);
+void mergeD(std::deque<int> &arr, int start, int mid, int end);
+void mergeInsertionSortD(std::deque<int> &arr, int start, int end);
 
-template <typename Container>
-void sortInsert(Container & my_container, int start, int midle , int end)
-{
-    int i = start;
-    int j = midle + 1;
-    int k = start;
-    int tmp[end + 1];
+void insertionSort(std::vector<int> &arr, int start, int end);
+void merge(std::vector<int> &arr, int start, int mid, int end) ;
+void mergeInsertionSort(std::vector<int> &arr, int start, int end);
 
-    while(i <= midle && j <= end)
-    {
-        if(my_container[i] <= my_container[j])
-        {
-            tmp[k] = my_container[i];
-            k++;
-            i++;     
-        }
-        else
-        {
-            tmp[k] = my_container[j];
-            k++;
-            j++;
-        }
-    }
-    while(i <= midle)
-    {
-        tmp[k] = my_container[i];
-        k++;
-        i++;
-    }
-    while(j <= end)
-    {
-        tmp[k] = my_container[j];
-        k++;
-        j++;
-    }
-    for(int a = start; a <= end; a++)
-    {
-        my_container[a] = tmp[a];
-    }
-}
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/22 22:54:42 by amessah           #+#    #+#             */
+/*   Updated: 2023/08/22 22:54:43 by amessah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PmergeMe.hpp"
 
 bool checkArgs(int argc, char **argv)
@@ -40,10 +52,14 @@ int main(int argc, char **argv)
         i++;
     }
     std::cout << std::endl;
-    pm.sortVector(pm.vect);
-    pm.sortDeque(pm.deq);
     std::cout << "After: ";
+    clock_t begin = clock();
+    mergeInsertionSort(pm.vect, 0, pm.vect.size() - 1);
+    clock_t end = clock();
     pm.printVector(pm.vect);
-     std::cout << "Time to process a range of " << pm.vect.size()  << " elements with std::vector: " << std::fixed << pm.timeVector << " us" << std::endl;
-    std::cout << "Time to process a range of " << pm.deq.size()  << " elements with std::deque: " << std::fixed << pm.timeDeque << " us" << std::endl;
+    std::cout << "Time to process a range of " << pm.vect.size()  << " elements with std::vector: " << std::fixed <<  std::setprecision(5)<< (static_cast<double>(end - begin) / CLOCKS_PER_SEC) * 1000 << " us" << std::endl;
+    begin = clock();
+    mergeInsertionSortD(pm.deq, 0, pm.deq.size() - 1);
+    end = clock();
+    std::cout << "Time to process a range of " << pm.deq.size()  << " elements with std::deque: " << std::fixed <<  std::setprecision(5)<< (static_cast<double>(end - begin) / CLOCKS_PER_SEC) * 1000 << " us" << std::endl;
 }
